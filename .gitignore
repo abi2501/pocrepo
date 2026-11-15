@@ -1,0 +1,19 @@
+# Environment files (keep safe templates in version control)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.coverage
+
+# Runtime-generated files
+*.log
+data/
+
+# Microsoft Office temporary lock files
+~$*

@@ -1,0 +1,6 @@
+# Only required for LIVE cloud sync / Entra enrollment / optional telemetry.
+# Tkinter GUI requires the operating system Python Tk package.
+msal>=1.30,<2
+python-dotenv>=1.0,<2
+requests>=2.31,<3
+azure-iot-device>=2.14,<3

@@ -1,0 +1,30 @@
+// Run this against the EdgeTelemetry database in Azure Data Explorer.
+
+.create-merge table EdgeLogs (
+    SchemaVersion:int,
+    EventId:string,
+    DeviceId:string,
+    SourceTable:string,
+    SourceRecordId:long,
+    EventTimeUtc:datetime,
+    EventType:string,
+    Severity:string,
+    Payload:dynamic,
+    IoTHubDeviceId:string,
+    IoTHubEnqueuedTime:datetime
+)
+
+.create-or-alter table EdgeLogs ingestion json mapping "EdgeLogsJsonMapping"
+'[
+  {"column":"SchemaVersion",     "Properties":{"Path":"$.schemaVersion"}},
+  {"column":"EventId",          "Properties":{"Path":"$.eventId"}},
+  {"column":"DeviceId",         "Properties":{"Path":"$.deviceId"}},
+  {"column":"SourceTable",      "Properties":{"Path":"$.sourceTable"}},
+  {"column":"SourceRecordId",   "Properties":{"Path":"$.sourceRecordId"}},
+  {"column":"EventTimeUtc",     "Properties":{"Path":"$.eventTimeUtc"}},
+  {"column":"EventType",        "Properties":{"Path":"$.eventType"}},
+  {"column":"Severity",         "Properties":{"Path":"$.severity"}},
+  {"column":"Payload",          "Properties":{"Path":"$.payload"}},
+  {"column":"IoTHubDeviceId",   "Properties":{"Path":"$.iothub-connection-device-id"}},
+  {"column":"IoTHubEnqueuedTime","Properties":{"Path":"$.iothub-enqueuedtime"}}
+]'

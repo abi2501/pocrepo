@@ -1,0 +1,48 @@
+// Latest received events
+EdgeLogs
+| order by IoTHubEnqueuedTime desc
+| take 50
+
+// Logical de-duplication for at-least-once edge delivery
+EdgeLogs
+| summarize arg_max(IoTHubEnqueuedTime, *) by EventId
+| order by EventTimeUtc desc
+| take 100
+
+// Events per device
+EdgeLogs
+| summarize arg_max(IoTHubEnqueuedTime, *) by EventId
+| summarize Events=count() by DeviceId
+| order by Events desc
+
+// Errors / warnings
+EdgeLogs
+| summarize arg_max(IoTHubEnqueuedTime, *) by EventId
+| where Severity in ("WARNING", "ERROR", "CRITICAL")
+| order by EventTimeUtc desc
+
+// Synchronization delay: useful for offline-field devices
+EdgeLogs
+| summarize arg_max(IoTHubEnqueuedTime, *) by EventId
+| extend SyncDelay = IoTHubEnqueuedTime - EventTimeUtc
+| project DeviceId, EventId, EventTimeUtc, IoTHubEnqueuedTime, SyncDelay
+| order by IoTHubEnqueuedTime desc
+
+// Average simulated temperature every 5 minutes
+EdgeLogs
+| summarize arg_max(IoTHubEnqueuedTime, *) by EventId
+| extend TemperatureC = todouble(Payload.temperatureC)
+| where isnotnull(TemperatureC)
+| summarize AvgTemperatureC=avg(TemperatureC) by DeviceId, bin(EventTimeUtc, 5m)
+| order by EventTimeUtc asc
+
+// Detect duplicates produced by a send-success / checkpoint-failure scenario
+EdgeLogs
+| summarize Copies=count() by EventId
+| where Copies > 1
+| order by Copies desc
+
+// Device identity mismatch check: authenticated IoT Hub identity vs body DeviceId
+EdgeLogs
+| where isnotempty(IoTHubDeviceId) and DeviceId != IoTHubDeviceId
+| project IoTHubEnqueuedTime, EventId, DeviceId, IoTHubDeviceId

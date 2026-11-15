@@ -1,0 +1,387 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5600" height="3300" viewBox="0 0 5600 3300">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-opacity="0.13"/></filter>
+</defs>
+<rect width="100%" height="100%" fill="#f7fafc"/>
+
+<rect x="55" y="42" width="5490" height="110" rx="26" fill="#083b6f" fill-opacity="1" stroke="#083b6f" stroke-width="0"/>
+<text x="2800.0" y="115" font-family="DejaVu Sans" font-size="48" font-weight="700" fill="#fff" text-anchor="middle">Offline-First Edge Device Architecture - Entra ID RBAC + SQLite + Azure IoT Hub + Azure Data Explorer</text>
+<text x="2800.0" y="182" font-family="DejaVu Sans" font-size="28" font-weight="500" fill="#34506e" text-anchor="middle">Raspberry Pi / Linux | Python + PyQt | systemd Sync Agent | Secure Online/Offline Authentication | Telemetry Analytics</text>
+<rect x="55" y="220" width="5490" height="1390" rx="30" fill="#eaf5ff" fill-opacity="1" stroke="#77baf5" stroke-width="6"/>
+<rect x="85" y="250" width="5430" height="68" rx="20" fill="#0b63a7" fill-opacity="1" stroke="#0b63a7" stroke-width="0"/>
+<text x="113" y="296" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">MICROSOFT AZURE CLOUD - identity, secure APIs, telemetry ingestion, analytics, operations</text>
+<rect x="110" y="355" width="990" height="1090" rx="24" fill="#fff" fill-opacity="1" stroke="#4f7dcc" stroke-width="4"/>
+<rect x="110" y="355" width="990" height="68" rx="20" fill="#3454a5" fill-opacity="1" stroke="#3454a5" stroke-width="0"/>
+<text x="138" y="401" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">1. Microsoft Entra ID - Identity &amp; Application RBAC</text>
+<rect x="145" y="450" width="250" height="48" rx="24" fill="#2563eb" fill-opacity="1" stroke="#2563eb" stroke-width="0"/>
+<text x="270.0" y="483" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">Users</text>
+<rect x="415" y="450" width="300" height="48" rx="24" fill="#6d28d9" fill-opacity="1" stroke="#6d28d9" stroke-width="0"/>
+<text x="565.0" y="483" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">App Registration</text>
+<rect x="735" y="450" width="290" height="48" rx="24" fill="#7c3aed" fill-opacity="1" stroke="#7c3aed" stroke-width="0"/>
+<text x="880.0" y="483" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">Enterprise App</text>
+<text x="150" y="560" font-family="DejaVu Sans" font-size="34" font-weight="700" fill="#163a63" text-anchor="start">Central source of truth</text>
+<circle cx="165" cy="605" r="7" fill="#4f46e5"/>
+<text x="189" y="613.0" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">User identities and account status</text>
+<circle cx="165" cy="648.74" r="7" fill="#4f46e5"/>
+<text x="189" y="656.74" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">Application registration for the edge-</text>
+<text x="189" y="689.6800000000001" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">device software</text>
+<circle cx="165" cy="725.42" r="7" fill="#4f46e5"/>
+<text x="189" y="733.42" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">Application roles: Operator, Supervisor,</text>
+<text x="189" y="766.3599999999999" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">ServiceEngineer, DeviceAdmin</text>
+<circle cx="165" cy="802.0999999999999" r="7" fill="#4f46e5"/>
+<text x="189" y="810.0999999999999" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">User-to-role assignments (or group-to-role</text>
+<text x="189" y="843.04" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">later)</text>
+<circle cx="165" cy="878.7799999999999" r="7" fill="#4f46e5"/>
+<text x="189" y="886.7799999999999" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">Online authentication via OAuth 2.0 /</text>
+<text x="189" y="919.7199999999998" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">OpenID Connect using MSAL</text>
+<circle cx="165" cy="955.4599999999998" r="7" fill="#4f46e5"/>
+<text x="189" y="963.4599999999998" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">Entra password never downloaded to the</text>
+<text x="189" y="996.3999999999999" font-family="DejaVu Sans" font-size="27" font-weight="400" fill="#273449" text-anchor="start">Raspberry Pi</text>
+<rect x="145" y="1105" width="920" height="255" rx="18" fill="#f4f0ff" fill-opacity="1" stroke="#a78bfa" stroke-width="3"/>
+<text x="170" y="1157" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#59339b" text-anchor="start">Example application roles</text>
+<rect x="170" y="1190" width="190" height="48" rx="24" fill="#16a34a" fill-opacity="1" stroke="#16a34a" stroke-width="0"/>
+<text x="265.0" y="1223" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">Operator</text>
+<rect x="380" y="1190" width="210" height="48" rx="24" fill="#d97706" fill-opacity="1" stroke="#d97706" stroke-width="0"/>
+<text x="485.0" y="1223" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">Supervisor</text>
+<rect x="610" y="1190" width="235" height="48" rx="24" fill="#2563eb" fill-opacity="1" stroke="#2563eb" stroke-width="0"/>
+<text x="727.5" y="1223" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">ServiceEngineer</text>
+<rect x="865" y="1190" width="185" height="48" rx="24" fill="#dc2626" fill-opacity="1" stroke="#dc2626" stroke-width="0"/>
+<text x="957.5" y="1223" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">DeviceAdmin</text>
+<text x="170" y="1290.0" font-family="DejaVu Sans" font-size="24" font-weight="500" fill="#503b69" text-anchor="start">Roles decide which PyQt features are enabled.</text>
+<text x="170" y="1322.4" font-family="DejaVu Sans" font-size="24" font-weight="500" fill="#503b69" text-anchor="start">These are application roles - not Azure subscription Owner/Contributor roles.</text>
+<rect x="1155" y="355" width="990" height="1090" rx="24" fill="#fff" fill-opacity="1" stroke="#8b5cf6" stroke-width="4"/>
+<rect x="1155" y="355" width="990" height="68" rx="20" fill="#6d28d9" fill-opacity="1" stroke="#6d28d9" stroke-width="0"/>
+<text x="1183" y="401" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">2. RBAC Sync API - Azure Function / App Service</text>
+<text x="1195" y="477" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#4c2c78" text-anchor="start">Purpose: expose only device-relevant authorization data</text>
+<circle cx="1210" cy="532" r="7" fill="#7c3aed"/>
+<text x="1234" y="540.0" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Backend authenticates to Microsoft Graph</text>
+<text x="1234" y="571.72" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">using Managed Identity or protected</text>
+<text x="1234" y="603.44" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">application credentials</text>
+<circle cx="1210" cy="636.26" r="7" fill="#7c3aed"/>
+<text x="1234" y="644.26" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Reads users and app-role assignments from</text>
+<text x="1234" y="675.98" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Entra</text>
+<circle cx="1210" cy="708.8" r="7" fill="#7c3aed"/>
+<text x="1234" y="716.8" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Filters the response for the target</text>
+<text x="1234" y="748.52" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">device/site/application</text>
+<circle cx="1210" cy="781.3399999999999" r="7" fill="#7c3aed"/>
+<text x="1234" y="789.3399999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Returns a signed/versioned authorization</text>
+<text x="1234" y="821.06" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">snapshot over HTTPS</text>
+<circle cx="1210" cy="853.8799999999999" r="7" fill="#7c3aed"/>
+<text x="1234" y="861.8799999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Does not return Entra passwords, password</text>
+<text x="1234" y="893.5999999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">hashes or refresh tokens</text>
+<circle cx="1210" cy="926.4199999999998" r="7" fill="#7c3aed"/>
+<text x="1234" y="934.4199999999998" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Can log sync requests and enforce per-</text>
+<text x="1234" y="966.1399999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">device authorization</text>
+<rect x="1190" y="1005" width="920" height="350" rx="18" fill="#faf7ff" fill-opacity="1" stroke="#c4b5fd" stroke-width="3"/>
+<text x="1215" y="1055" font-family="DejaVu Sans" font-size="27" font-weight="700" fill="#5b21b6" text-anchor="start">Example REST contract</text>
+<text x="1215" y="1105.0" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#40344f" text-anchor="start">GET /api/device-access/{deviceId}</text>
+<text x="1215" y="1135.36" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#40344f" text-anchor="start">200 OK</text>
+<text x="1215" y="1165.72" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#40344f" text-anchor="start">{ version, generatedUtc, validUntilUtc, users[] }</text>
+<text x="1215" y="1196.08" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#40344f" text-anchor="start">user = { entraObjectId, username, enabled, roles[] }</text>
+<text x="1215" y="1226.44" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#40344f" text-anchor="start"></text>
+<text x="1215" y="1256.8" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#40344f" text-anchor="start">Device authenticates to this API independently; Graph permissions stay in Azure.</text>
+<rect x="2200" y="355" width="990" height="1090" rx="24" fill="#fff" fill-opacity="1" stroke="#1d88e5" stroke-width="4"/>
+<rect x="2200" y="355" width="990" height="68" rx="20" fill="#0078d4" fill-opacity="1" stroke="#0078d4" stroke-width="0"/>
+<text x="2228" y="401" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">3. Azure IoT Hub - Device Gateway &amp; Telemetry Ingress</text>
+<rect x="2240" y="455" width="270" height="48" rx="24" fill="#0078d4" fill-opacity="1" stroke="#0078d4" stroke-width="0"/>
+<text x="2375.0" y="488" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">Device Identity</text>
+<rect x="2530" y="455" width="270" height="48" rx="24" fill="#0e7490" fill-opacity="1" stroke="#0e7490" stroke-width="0"/>
+<text x="2665.0" y="488" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">MQTT / TLS</text>
+<rect x="2820" y="455" width="300" height="48" rx="24" fill="#0284c7" fill-opacity="1" stroke="#0284c7" stroke-width="0"/>
+<text x="2970.0" y="488" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">D2C Messages</text>
+<circle cx="2255" cy="542" r="7" fill="#0284c7"/>
+<text x="2279" y="550.0" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Each edge device has its own IoT Hub</text>
+<text x="2279" y="581.72" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Device ID</text>
+<circle cx="2255" cy="614.54" r="7" fill="#0284c7"/>
+<text x="2279" y="622.54" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">POC: per-device symmetric key; production:</text>
+<text x="2279" y="654.26" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">X.509 certificate</text>
+<circle cx="2255" cy="687.0799999999999" r="7" fill="#0284c7"/>
+<text x="2279" y="695.0799999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Python uses azure-iot-device SDK</text>
+<circle cx="2255" cy="727.9" r="7" fill="#0284c7"/>
+<text x="2279" y="735.9" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">MQTT over WebSockets / TLS on TCP 443 for</text>
+<text x="2279" y="767.62" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">corporate-network compatibility</text>
+<circle cx="2255" cy="800.4399999999999" r="7" fill="#0284c7"/>
+<text x="2279" y="808.4399999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Receives device-to-cloud telemetry and</text>
+<text x="2279" y="840.16" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">application logs</text>
+<circle cx="2255" cy="872.9799999999999" r="7" fill="#0284c7"/>
+<text x="2279" y="880.9799999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Built-in events endpoint is consumed by</text>
+<text x="2279" y="912.6999999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">downstream analytics</text>
+<rect x="2235" y="1055" width="920" height="300" rx="18" fill="#eef8ff" fill-opacity="1" stroke="#7dd3fc" stroke-width="3"/>
+<text x="2260" y="1103" font-family="DejaVu Sans" font-size="27" font-weight="700" fill="#075985" text-anchor="start">Telemetry message envelope</text>
+<text x="2260" y="1153.0" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#164e63" text-anchor="start">eventId = deviceId:table:sourceRecordId</text>
+<text x="2260" y="1184.28" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#164e63" text-anchor="start">eventTimeUtc = time event occurred on edge</text>
+<text x="2260" y="1215.56" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#164e63" text-anchor="start">deviceId / eventType / severity / payload</text>
+<text x="2260" y="1246.84" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#164e63" text-anchor="start">At-least-once delivery; duplicates are acceptable and deduplicated by EventId.</text>
+<rect x="3245" y="355" width="990" height="1090" rx="24" fill="#fff" fill-opacity="1" stroke="#0ea5a5" stroke-width="4"/>
+<rect x="3245" y="355" width="990" height="68" rx="20" fill="#0f766e" fill-opacity="1" stroke="#0f766e" stroke-width="0"/>
+<text x="3273" y="401" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">4. Azure Data Explorer (ADX) - Telemetry Store &amp; Analytics</text>
+<rect x="3285" y="455" width="260" height="48" rx="24" fill="#0f766e" fill-opacity="1" stroke="#0f766e" stroke-width="0"/>
+<text x="3415.0" y="488" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">EdgeTelemetry</text>
+<rect x="3565" y="455" width="230" height="48" rx="24" fill="#0d9488" fill-opacity="1" stroke="#0d9488" stroke-width="0"/>
+<text x="3680.0" y="488" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">EdgeLogs</text>
+<rect x="3815" y="455" width="350" height="48" rx="24" fill="#14b8a6" fill-opacity="1" stroke="#14b8a6" stroke-width="0"/>
+<text x="3990.0" y="488" font-family="DejaVu Sans" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">Kusto Query Language</text>
+<circle cx="3300" cy="542" r="7" fill="#0d9488"/>
+<text x="3324" y="550.0" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Optimized for logs, events and time-series</text>
+<text x="3324" y="581.72" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">telemetry</text>
+<circle cx="3300" cy="614.54" r="7" fill="#0d9488"/>
+<text x="3324" y="622.54" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">IoT Hub data connection ingests JSON into</text>
+<text x="3324" y="654.26" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">EdgeLogs</text>
+<circle cx="3300" cy="687.0799999999999" r="7" fill="#0d9488"/>
+<text x="3324" y="695.0799999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Stores original EventTimeUtc and</text>
+<text x="3324" y="726.8" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">IoTHubEnqueuedTime separately</text>
+<circle cx="3300" cy="759.6199999999999" r="7" fill="#0d9488"/>
+<text x="3324" y="767.6199999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">KQL queries errors, trends, last-seen</text>
+<text x="3324" y="799.3399999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">status and synchronization delay</text>
+<circle cx="3300" cy="832.1599999999999" r="7" fill="#0d9488"/>
+<text x="3324" y="840.1599999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Logical deduplication by EventId using</text>
+<text x="3324" y="871.8799999999999" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">arg_max()</text>
+<circle cx="3300" cy="904.6999999999998" r="7" fill="#0d9488"/>
+<text x="3324" y="912.6999999999998" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Native ADX dashboard for the POC;</text>
+<text x="3324" y="944.4199999999998" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Grafana/Power BI can be added later</text>
+<rect x="3280" y="1055" width="920" height="300" rx="18" fill="#ebfffd" fill-opacity="1" stroke="#5eead4" stroke-width="3"/>
+<text x="3305" y="1103" font-family="DejaVu Sans" font-size="27" font-weight="700" fill="#115e59" text-anchor="start">Example KQL</text>
+<text x="3305" y="1153.0" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#134e4a" text-anchor="start">EdgeLogs</text>
+<text x="3305" y="1184.28" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#134e4a" text-anchor="start">| summarize arg_max(IoTHubEnqueuedTime, *) by EventId</text>
+<text x="3305" y="1215.56" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#134e4a" text-anchor="start">| where Severity == "ERROR"</text>
+<text x="3305" y="1246.84" font-family="DejaVu Sans" font-size="23" font-weight="500" fill="#134e4a" text-anchor="start">| summarize Errors=count() by DeviceId</text>
+<rect x="4290" y="355" width="990" height="1090" rx="24" fill="#fff" fill-opacity="1" stroke="#64748b" stroke-width="4"/>
+<rect x="4290" y="355" width="990" height="68" rx="20" fill="#475569" fill-opacity="1" stroke="#475569" stroke-width="0"/>
+<text x="4318" y="401" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">5. Security, Secrets, Monitoring &amp; Operations</text>
+<circle cx="4345" cy="472" r="7" fill="#64748b"/>
+<text x="4369" y="480.0" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Azure Key Vault: cloud-side</text>
+<text x="4369" y="511.72" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">secrets/certificates where required</text>
+<circle cx="4345" cy="545.84" r="7" fill="#64748b"/>
+<text x="4369" y="553.84" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Azure Monitor / Application Insights: API</text>
+<text x="4369" y="585.5600000000001" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">and cloud health</text>
+<circle cx="4345" cy="619.6800000000001" r="7" fill="#64748b"/>
+<text x="4369" y="627.6800000000001" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Device telemetry monitoring: connectivity,</text>
+<text x="4369" y="659.4000000000001" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">failures, backlog and last sync</text>
+<circle cx="4345" cy="693.5200000000001" r="7" fill="#64748b"/>
+<text x="4369" y="701.5200000000001" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Least privilege: edge device never</text>
+<text x="4369" y="733.2400000000001" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">receives Microsoft Graph directory</text>
+<text x="4369" y="764.96" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">credentials</text>
+<circle cx="4345" cy="799.0800000000002" r="7" fill="#64748b"/>
+<text x="4369" y="807.0800000000002" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">RBAC snapshot contains an expiry /</text>
+<text x="4369" y="838.8000000000002" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">offline-validity policy</text>
+<circle cx="4345" cy="872.9200000000002" r="7" fill="#64748b"/>
+<text x="4369" y="880.9200000000002" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Login and synchronization events should be</text>
+<text x="4369" y="912.6400000000002" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">auditable</text>
+<rect x="4325" y="1005" width="920" height="350" rx="18" fill="#fff7ed" fill-opacity="1" stroke="#fdba74" stroke-width="3"/>
+<text x="4350" y="1057" font-family="DejaVu Sans" font-size="27" font-weight="700" fill="#9a3412" text-anchor="start">Production security upgrades</text>
+<circle cx="4365" cy="1107" r="7" fill="#f97316"/>
+<text x="4389" y="1115.0" font-family="DejaVu Sans" font-size="22" font-weight="400" fill="#7c2d12" text-anchor="start">X.509 certificate per device</text>
+<circle cx="4365" cy="1140.44" r="7" fill="#f97316"/>
+<text x="4389" y="1148.44" font-family="DejaVu Sans" font-size="22" font-weight="400" fill="#7c2d12" text-anchor="start">Device certificate/private key protected</text>
+<text x="4389" y="1175.28" font-family="DejaVu Sans" font-size="22" font-weight="400" fill="#7c2d12" text-anchor="start">by OS permissions or hardware-backed</text>
+<text x="4389" y="1202.1200000000001" font-family="DejaVu Sans" font-size="22" font-weight="400" fill="#7c2d12" text-anchor="start">storage where available</text>
+<circle cx="4365" cy="1227.56" r="7" fill="#f97316"/>
+<text x="4389" y="1235.56" font-family="DejaVu Sans" font-size="22" font-weight="400" fill="#7c2d12" text-anchor="start">Signed authorization snapshots / API</text>
+<text x="4389" y="1262.3999999999999" font-family="DejaVu Sans" font-size="22" font-weight="400" fill="#7c2d12" text-anchor="start">response integrity</text>
+<circle cx="4365" cy="1287.84" r="7" fill="#f97316"/>
+<text x="4389" y="1295.84" font-family="DejaVu Sans" font-size="22" font-weight="400" fill="#7c2d12" text-anchor="start">Offline PIN throttling, lockout, audit and</text>
+<text x="4389" y="1322.6799999999998" font-family="DejaVu Sans" font-size="22" font-weight="400" fill="#7c2d12" text-anchor="start">expiry</text>
+<circle cx="4365" cy="1348.12" r="7" fill="#f97316"/>
+<text x="4389" y="1356.12" font-family="DejaVu Sans" font-size="22" font-weight="400" fill="#7c2d12" text-anchor="start">Controlled software update and rollback</text>
+<text x="4389" y="1382.9599999999998" font-family="DejaVu Sans" font-size="22" font-weight="400" fill="#7c2d12" text-anchor="start">strategy</text>
+<line x1="1100" y1="850" x2="1155" y2="850" stroke="#7c3aed" stroke-width="8" marker-end="url(#arrow)"/>
+<circle cx="1128" cy="800" r="28" fill="#7c3aed" stroke="#fff" stroke-width="4"/>
+<text x="1128" y="810" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+<line x1="3190" y1="850" x2="3245" y2="850" stroke="#0284c7" stroke-width="8" marker-end="url(#arrow)"/>
+<circle cx="3218" cy="800" r="28" fill="#0284c7" stroke="#fff" stroke-width="4"/>
+<text x="3218" y="810" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">8</text>
+<line x1="4235" y1="850" x2="4290" y2="850" stroke="#64748b" stroke-width="6" stroke-dasharray="16 12" marker-end="url(#arrow)"/>
+<rect x="55" y="1645" width="5490" height="90" rx="18" fill="#fff7ed" fill-opacity="1" stroke="#fb923c" stroke-width="4"/>
+<text x="2800.0" y="1703" font-family="DejaVu Sans" font-size="30" font-weight="700" fill="#9a3412" text-anchor="middle">NETWORK BOUNDARY - edge device may remain offline for hours/days; all local operations must continue safely</text>
+<rect x="55" y="1770" width="5490" height="1290" rx="30" fill="#effced" fill-opacity="1" stroke="#63b85b" stroke-width="6"/>
+<rect x="85" y="1800" width="5430" height="68" rx="20" fill="#2f7d32" fill-opacity="1" stroke="#2f7d32" stroke-width="0"/>
+<text x="113" y="1846" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">RASPBERRY PI / LINUX EDGE DEVICE - Python + PyQt + systemd + SQLite</text>
+<rect x="110" y="1900" width="1180" height="980" rx="24" fill="#fff" fill-opacity="1" stroke="#45a049" stroke-width="4"/>
+<rect x="110" y="1900" width="1180" height="68" rx="20" fill="#388e3c" fill-opacity="1" stroke="#388e3c" stroke-width="0"/>
+<text x="138" y="1946" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">A. Existing PyQt Device Application</text>
+<text x="150" y="2025" font-family="DejaVu Sans" font-size="30" font-weight="700" fill="#205b25" text-anchor="start">Primary responsibilities</text>
+<circle cx="165" cy="2077" r="7" fill="#22a447"/>
+<text x="189" y="2085.0" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Device UI and normal operational workflow</text>
+<circle cx="165" cy="2117.82" r="7" fill="#22a447"/>
+<text x="189" y="2125.82" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Writes device logs / measurements to local</text>
+<text x="189" y="2157.54" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">telemetry SQLite database</text>
+<circle cx="165" cy="2190.36" r="7" fill="#22a447"/>
+<text x="189" y="2198.36" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Login screen and application authorization</text>
+<text x="189" y="2230.08" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">enforcement</text>
+<circle cx="165" cy="2262.9" r="7" fill="#22a447"/>
+<text x="189" y="2270.9" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Online login: launch Microsoft Entra/MSAL</text>
+<text x="189" y="2302.62" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">authentication flow</text>
+<circle cx="165" cy="2335.44" r="7" fill="#22a447"/>
+<text x="189" y="2343.44" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Offline login: verify local offline</text>
+<text x="189" y="2375.16" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">credential then read cached roles</text>
+<circle cx="165" cy="2407.98" r="7" fill="#22a447"/>
+<text x="189" y="2415.98" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">Never needs direct Microsoft Graph</text>
+<text x="189" y="2447.7" font-family="DejaVu Sans" font-size="26" font-weight="400" fill="#273449" text-anchor="start">permissions</text>
+<rect x="145" y="2570" width="1110" height="250" rx="18" fill="#f0fff2" fill-opacity="1" stroke="#86d88c" stroke-width="3"/>
+<text x="180" y="2620" font-family="DejaVu Sans" font-size="27" font-weight="700" fill="#236b2a" text-anchor="start">Authorization decision</text>
+<text x="180" y="2668.0" font-family="DejaVu Sans" font-size="22" font-weight="500" fill="#254b28" text-anchor="start">if can("change_settings") -&gt; enable Settings</text>
+<text x="180" y="2697.7" font-family="DejaVu Sans" font-size="22" font-weight="500" fill="#254b28" text-anchor="start">if can("user_admin")      -&gt; enable Admin panel</text>
+<text x="180" y="2727.4" font-family="DejaVu Sans" font-size="22" font-weight="500" fill="#254b28" text-anchor="start">Prefer permission checks over scattering role-name checks throughout UI.</text>
+<rect x="1355" y="1900" width="1760" height="980" rx="24" fill="#fff" fill-opacity="1" stroke="#6d28d9" stroke-width="4"/>
+<rect x="1355" y="1900" width="1760" height="68" rx="20" fill="#6d28d9" fill-opacity="1" stroke="#6d28d9" stroke-width="0"/>
+<text x="1383" y="1946" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">B. edge-sync.service - Always-running Python systemd service</text>
+<rect x="1390" y="2000" width="820" height="690" rx="18" fill="#faf7ff" fill-opacity="1" stroke="#b9a0f5" stroke-width="3"/>
+<text x="1430" y="2055" font-family="DejaVu Sans" font-size="30" font-weight="700" fill="#5b21b6" text-anchor="start">Authorization Sync</text>
+<circle cx="1445" cy="2102" r="7" fill="#8b5cf6"/>
+<text x="1469" y="2110.0" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">Runs at boot, when connectivity returns,</text>
+<text x="1469" y="2138.06" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">and periodically while online</text>
+<circle cx="1445" cy="2164.56" r="7" fill="#8b5cf6"/>
+<text x="1469" y="2172.56" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">Calls RBAC Sync API over HTTPS</text>
+<circle cx="1445" cy="2199.06" r="7" fill="#8b5cf6"/>
+<text x="1469" y="2207.06" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">Downloads versioned user + app-role</text>
+<text x="1469" y="2235.12" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">snapshot</text>
+<circle cx="1445" cy="2261.62" r="7" fill="#8b5cf6"/>
+<text x="1469" y="2269.62" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">Validates response and validity period</text>
+<circle cx="1445" cy="2296.12" r="7" fill="#8b5cf6"/>
+<text x="1469" y="2304.12" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">Updates auth_cache.db atomically inside a</text>
+<text x="1469" y="2332.18" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">transaction</text>
+<circle cx="1445" cy="2358.68" r="7" fill="#8b5cf6"/>
+<text x="1469" y="2366.68" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">Marks removed/disabled users accordingly</text>
+<circle cx="1445" cy="2393.18" r="7" fill="#8b5cf6"/>
+<text x="1469" y="2401.18" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">Keeps last valid snapshot if</text>
+<text x="1469" y="2429.24" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#35284a" text-anchor="start">synchronization fails</text>
+<rect x="2245" y="2000" width="835" height="690" rx="18" fill="#eef8ff" fill-opacity="1" stroke="#7dd3fc" stroke-width="3"/>
+<text x="2285" y="2055" font-family="DejaVu Sans" font-size="30" font-weight="700" fill="#075985" text-anchor="start">Telemetry Sync</text>
+<circle cx="2300" cy="2102" r="7" fill="#0284c7"/>
+<text x="2324" y="2110.0" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">Reads telemetry SQLite in read-only mode</text>
+<circle cx="2300" cy="2136.5" r="7" fill="#0284c7"/>
+<text x="2324" y="2144.5" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">Finds rows newer than durable checkpoint</text>
+<circle cx="2300" cy="2171.0" r="7" fill="#0284c7"/>
+<text x="2324" y="2179.0" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">Builds deterministic EventId and JSON</text>
+<text x="2324" y="2207.06" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">message</text>
+<circle cx="2300" cy="2233.56" r="7" fill="#0284c7"/>
+<text x="2324" y="2241.56" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">Sends through azure-iot-device to IoT Hub</text>
+<circle cx="2300" cy="2268.06" r="7" fill="#0284c7"/>
+<text x="2324" y="2276.06" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">Advances checkpoint only after successful</text>
+<text x="2324" y="2304.12" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">send</text>
+<circle cx="2300" cy="2330.62" r="7" fill="#0284c7"/>
+<text x="2324" y="2338.62" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">Exponential backoff while offline</text>
+<circle cx="2300" cy="2365.12" r="7" fill="#0284c7"/>
+<text x="2324" y="2373.12" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">At-least-once delivery; duplicates</text>
+<text x="2324" y="2401.18" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">tolerated</text>
+<rect x="1390" y="2720" width="1690" height="110" rx="16" fill="#f7f4ff" fill-opacity="1" stroke="#c4b5fd" stroke-width="3"/>
+<text x="2235" y="2765" font-family="DejaVu Sans" font-size="22" font-weight="600" fill="#51377c" text-anchor="middle">Linux lifecycle: systemctl enable/start/restart edge-sync | journald logs | dedicated least-privilege user</text>
+<rect x="3190" y="1900" width="1420" height="980" rx="24" fill="#fff" fill-opacity="1" stroke="#b7791f" stroke-width="4"/>
+<rect x="3190" y="1900" width="1420" height="68" rx="20" fill="#a16207" fill-opacity="1" stroke="#a16207" stroke-width="0"/>
+<text x="3218" y="1946" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">C. Local SQLite Persistence - Offline System of Record</text>
+<rect x="3230" y="2010" width="650" height="700" rx="18" fill="#fffaf0" fill-opacity="1" stroke="#f1b95f" stroke-width="3"/>
+<text x="3555" y="2060" font-family="DejaVu Sans" font-size="29" font-weight="700" fill="#854d0e" text-anchor="middle">auth_cache.db</text>
+<circle cx="3260" cy="2112" r="7" fill="#d97706"/>
+<text x="3284" y="2120.0" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#5f4217" text-anchor="start">users</text>
+<circle cx="3260" cy="2146.96" r="7" fill="#d97706"/>
+<text x="3284" y="2154.96" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#5f4217" text-anchor="start">roles</text>
+<circle cx="3260" cy="2181.92" r="7" fill="#d97706"/>
+<text x="3284" y="2189.92" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#5f4217" text-anchor="start">user_roles</text>
+<circle cx="3260" cy="2216.88" r="7" fill="#d97706"/>
+<text x="3284" y="2224.88" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#5f4217" text-anchor="start">offline_credentials (PIN verifier/hash)</text>
+<circle cx="3260" cy="2251.84" r="7" fill="#d97706"/>
+<text x="3284" y="2259.84" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#5f4217" text-anchor="start">auth_sync_state</text>
+<circle cx="3260" cy="2286.8" r="7" fill="#d97706"/>
+<text x="3284" y="2294.8" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#5f4217" text-anchor="start">login_audit</text>
+<circle cx="3260" cy="2321.76" r="7" fill="#d97706"/>
+<text x="3284" y="2329.76" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#5f4217" text-anchor="start">snapshot version + validUntilUtc</text>
+<rect x="3915" y="2010" width="650" height="700" rx="18" fill="#f0f8ff" fill-opacity="1" stroke="#7eb8ea" stroke-width="3"/>
+<text x="4240" y="2060" font-family="DejaVu Sans" font-size="29" font-weight="700" fill="#075985" text-anchor="middle">telemetry.db</text>
+<circle cx="3945" cy="2112" r="7" fill="#0284c7"/>
+<text x="3969" y="2120.0" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">device_logs / measurements</text>
+<circle cx="3945" cy="2146.96" r="7" fill="#0284c7"/>
+<text x="3969" y="2154.96" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">stable monotonically increasing ID</text>
+<circle cx="3945" cy="2181.92" r="7" fill="#0284c7"/>
+<text x="3969" y="2189.92" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">event timestamp</text>
+<circle cx="3945" cy="2216.88" r="7" fill="#0284c7"/>
+<text x="3969" y="2224.88" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">payload / status / severity</text>
+<circle cx="3945" cy="2251.84" r="7" fill="#0284c7"/>
+<text x="3969" y="2259.84" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">app continues writing while offline</text>
+<circle cx="3945" cy="2286.8" r="7" fill="#0284c7"/>
+<text x="3969" y="2294.8" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">sync reads database read-only</text>
+<circle cx="3945" cy="2321.76" r="7" fill="#0284c7"/>
+<text x="3969" y="2329.76" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#17364d" text-anchor="start">checkpoint stored separately</text>
+<rect x="3230" y="2740" width="1335" height="90" rx="16" fill="#fff7ed" fill-opacity="1" stroke="#fdba74" stroke-width="3"/>
+<text x="3897" y="2796" font-family="DejaVu Sans" font-size="22" font-weight="700" fill="#9a3412" text-anchor="middle">Never store Entra passwords. Store only app authorization cache + securely derived offline credential verifier.</text>
+<rect x="4685" y="1900" width="805" height="980" rx="24" fill="#fff" fill-opacity="1" stroke="#ef6c00" stroke-width="4"/>
+<rect x="4685" y="1900" width="805" height="68" rx="20" fill="#e56b00" fill-opacity="1" stroke="#e56b00" stroke-width="0"/>
+<text x="4713" y="1946" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#fff" text-anchor="start">D. Offline Login &amp; Local Security</text>
+<circle cx="4725" cy="2012" r="7" fill="#f97316"/>
+<text x="4749" y="2020.0" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">ONLINE: authenticate user with Entra via</text>
+<text x="4749" y="2048.06" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">MSAL</text>
+<circle cx="4725" cy="2074.33" r="7" fill="#f97316"/>
+<text x="4749" y="2082.33" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">OFFLINE: username + local PIN/passphrase</text>
+<text x="4749" y="2110.39" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">verifier</text>
+<circle cx="4725" cy="2136.66" r="7" fill="#f97316"/>
+<text x="4749" y="2144.66" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">PIN stored only as salted slow hash (e.g.</text>
+<text x="4749" y="2172.72" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">Argon2id); never plaintext</text>
+<circle cx="4725" cy="2198.99" r="7" fill="#f97316"/>
+<text x="4749" y="2206.99" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">Check user enabled flag and snapshot</text>
+<text x="4749" y="2235.0499999999997" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">validity</text>
+<circle cx="4725" cy="2261.3199999999997" r="7" fill="#f97316"/>
+<text x="4749" y="2269.3199999999997" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">Apply cached app roles / permissions</text>
+<circle cx="4725" cy="2295.5899999999997" r="7" fill="#f97316"/>
+<text x="4749" y="2303.5899999999997" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">Failed-attempt counter + lockout</text>
+<circle cx="4725" cy="2329.8599999999997" r="7" fill="#f97316"/>
+<text x="4749" y="2337.8599999999997" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">Audit login mode: ENTRA_ONLINE or</text>
+<text x="4749" y="2365.9199999999996" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">OFFLINE_PIN</text>
+<circle cx="4725" cy="2392.1899999999996" r="7" fill="#f97316"/>
+<text x="4749" y="2400.1899999999996" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">Policy decision: deny or restrict access</text>
+<text x="4749" y="2428.2499999999995" font-family="DejaVu Sans" font-size="23" font-weight="400" fill="#4b3525" text-anchor="start">after cache expiry</text>
+<path d="M 1290 2250 C 1600 2250, 2900 2250, 3915 2250" fill="none" stroke="#2f7d32" stroke-width="7" marker-end="url(#arrow)"/>
+<circle cx="1510" cy="2195" r="28" fill="#2f7d32" stroke="#fff" stroke-width="4"/>
+<text x="1510" y="2205" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+<text x="1510" y="2170" font-family="DejaVu Sans" font-size="22" font-weight="600" fill="#2f7d32" text-anchor="middle">write logs / measurements</text>
+<path d="M 3230 2470 C 2800 2470, 1600 2470, 1290 2470" fill="none" stroke="#a16207" stroke-width="7" marker-end="url(#arrow)"/>
+<circle cx="1505" cy="2525" r="28" fill="#a16207" stroke="#fff" stroke-width="4"/>
+<text x="1505" y="2535" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+<text x="1505" y="2565" font-family="DejaVu Sans" font-size="22" font-weight="600" fill="#7c4a08" text-anchor="middle">offline login + roles</text>
+<line x1="2210" y1="2470" x2="3230" y2="2470" stroke="#7c3aed" stroke-width="7" marker-end="url(#arrow)"/>
+<circle cx="2720" cy="2420" r="28" fill="#7c3aed" stroke="#fff" stroke-width="4"/>
+<text x="2720" y="2430" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+<path d="M 3915 2330 C 3620 2330, 3300 2330, 3080 2330" fill="none" stroke="#0284c7" stroke-width="7" marker-end="url(#arrow)"/>
+<circle cx="3500" cy="2275" r="28" fill="#0284c7" stroke="#fff" stroke-width="4"/>
+<text x="3500" y="2285" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">6</text>
+<path d="M 1645 1445 L 1645 1688 L 1800 1688 L 1800 2000" fill="none" stroke="#7c3aed" stroke-width="8" marker-end="url(#arrow)"/>
+<circle cx="1725" cy="1690" r="28" fill="#7c3aed" stroke="#fff" stroke-width="4"/>
+<text x="1725" y="1700" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+<text x="1765" y="1665" font-family="DejaVu Sans" font-size="22" font-weight="600" fill="#5b21b6" text-anchor="start">HTTPS / JSON authorization snapshot</text>
+<path d="M 2665 2000 L 2665 1688 L 2695 1688 L 2695 1445" fill="none" stroke="#0284c7" stroke-width="8" marker-end="url(#arrow)"/>
+<circle cx="2590" cy="1690" r="28" fill="#0284c7" stroke="#fff" stroke-width="4"/>
+<text x="2590" y="1700" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">7</text>
+<text x="2850" y="1665" font-family="DejaVu Sans" font-size="22" font-weight="600" fill="#075985" text-anchor="start">MQTT over WebSockets / TLS 443</text>
+<path d="M 660 1900 L 660 1695 L 605 1695 L 605 1445" fill="none" stroke="#4f46e5" stroke-width="6" stroke-dasharray="18 12" marker-end="url(#arrow)"/>
+<circle cx="590" cy="1690" r="28" fill="#4f46e5" stroke="#fff" stroke-width="4"/>
+<text x="590" y="1700" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">9</text>
+<text x="465" y="1665" font-family="DejaVu Sans" font-size="22" font-weight="600" fill="#4338ca" text-anchor="middle">Online login: MSAL / OIDC</text>
+<rect x="55" y="3090" width="5490" height="165" rx="20" fill="#ffffff" fill-opacity="1" stroke="#cbd5e1" stroke-width="3"/>
+<text x="95" y="3140" font-family="DejaVu Sans" font-size="26" font-weight="700" fill="#334155" text-anchor="start">NUMBERED FLOW</text>
+<circle cx="420" cy="3175" r="28" fill="#334155" stroke="#fff" stroke-width="4"/>
+<text x="420" y="3185" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+<text x="462" y="3184" font-family="DejaVu Sans" font-size="20" font-weight="600" fill="#334155" text-anchor="start">Admin assigns Entra App Roles</text>
+<circle cx="975" cy="3175" r="28" fill="#334155" stroke="#fff" stroke-width="4"/>
+<text x="975" y="3185" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+<text x="1017" y="3184" font-family="DejaVu Sans" font-size="20" font-weight="600" fill="#334155" text-anchor="start">Edge downloads RBAC snapshot</text>
+<circle cx="1530" cy="3175" r="28" fill="#334155" stroke="#fff" stroke-width="4"/>
+<text x="1530" y="3185" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+<text x="1572" y="3184" font-family="DejaVu Sans" font-size="20" font-weight="600" fill="#334155" text-anchor="start">Atomic auth-cache update</text>
+<circle cx="2085" cy="3175" r="28" fill="#334155" stroke="#fff" stroke-width="4"/>
+<text x="2085" y="3185" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+<text x="2127" y="3184" font-family="DejaVu Sans" font-size="20" font-weight="600" fill="#334155" text-anchor="start">Offline login uses cache</text>
+<circle cx="2640" cy="3175" r="28" fill="#334155" stroke="#fff" stroke-width="4"/>
+<text x="2640" y="3185" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+<text x="2682" y="3184" font-family="DejaVu Sans" font-size="20" font-weight="600" fill="#334155" text-anchor="start">App writes telemetry</text>
+<circle cx="3195" cy="3175" r="28" fill="#334155" stroke="#fff" stroke-width="4"/>
+<text x="3195" y="3185" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">6</text>
+<text x="3237" y="3184" font-family="DejaVu Sans" font-size="20" font-weight="600" fill="#334155" text-anchor="start">Agent reads pending rows</text>
+<circle cx="3750" cy="3175" r="28" fill="#334155" stroke="#fff" stroke-width="4"/>
+<text x="3750" y="3185" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">7</text>
+<text x="3792" y="3184" font-family="DejaVu Sans" font-size="20" font-weight="600" fill="#334155" text-anchor="start">Telemetry sent to IoT Hub</text>
+<circle cx="4305" cy="3175" r="28" fill="#334155" stroke="#fff" stroke-width="4"/>
+<text x="4305" y="3185" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">8</text>
+<text x="4347" y="3184" font-family="DejaVu Sans" font-size="20" font-weight="600" fill="#334155" text-anchor="start">IoT Hub feeds ADX</text>
+<circle cx="4860" cy="3175" r="28" fill="#334155" stroke="#fff" stroke-width="4"/>
+<text x="4860" y="3185" font-family="DejaVu Sans" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">9</text>
+<text x="4902" y="3184" font-family="DejaVu Sans" font-size="20" font-weight="600" fill="#334155" text-anchor="start">Online login uses Entra/MSAL</text>
+</svg>

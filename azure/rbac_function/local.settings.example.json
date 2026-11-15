@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "ENTRA_TENANT_ID": "<tenant-guid>",
+    "GRAPH_CLIENT_ID": "<rbac-reader-app-client-id>",
+    "GRAPH_CLIENT_SECRET": "<rbac-reader-app-client-secret>",
+    "EDGE_APP_SP_OBJECT_ID": "<EdgeDeviceApplication-enterprise-app-object-id>",
+    "ALLOWED_DEVICE_IDS": "WSL-POC-001",
+    "RBAC_CACHE_VALID_HOURS": "168"
+  }
+}

@@ -1,0 +1,4 @@
+# Live RBAC and Entra verification without Azure IoT Hub telemetry.
+msal>=1.30,<2
+python-dotenv>=1.0,<2
+requests>=2.31,<3

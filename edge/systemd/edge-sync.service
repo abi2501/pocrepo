@@ -1,0 +1,19 @@
+[Unit]
+Description=Edge SQLite telemetry uploader (RBAC sync requires user sign-in)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=edge-sync
+Group=edge-sync
+WorkingDirectory=/opt/edge-sync/edge
+Environment=EDGE_ENV_FILE=/etc/edge-sync/edge-sync.env
+ExecStart=/opt/edge-sync/venv/bin/python -m app.sync_agent
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
